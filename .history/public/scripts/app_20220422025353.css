@@ -1,0 +1,163 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* background-image: url(../img/main-bg.jpeg); */
+    background-color: rgb(44 44 44);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    color: rgb(255, 255, 255);
+    font-family: 'Baloo Bhai 2', cursive;
+}
+#header {
+    text-align:center;
+    padding:1rem 0;
+    border-bottom: 1px solid rgb(109, 101, 101);;
+    width: 100%;
+}
+#section_1 {
+    text-align:center;
+    padding: 2rem 0;
+    border-bottom: 1px solid rgb(109, 101, 101);
+    width: 100%;
+}
+#startGame_button {
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgb(109, 101, 101);
+    padding: 5px 10px;
+    font-size: .8rem;
+    cursor: pointer;
+    border-radius:5px;
+    font-weight: 600;
+    display: inline-block;
+}
+.section_2_wrapper {
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    overflow: hidden;
+    background: rgb(44 44 44);
+}
+#hangman {
+    width: 100%;
+    height: 100%;
+    border-right: 1px solid rgb(109, 101, 101); 
+    flex: 0 50%;
+}
+.hm_wrapper {
+    padding-top: 2rem;
+}
+.hm_stand {
+    position: relative;
+}
+.hm_hook {
+    width: 2px;
+    height: 10px;
+    position: absolute;
+    left: 157px;
+    top: 35px;
+    background-color: #fff;
+}
+.left_bar {
+    width:10px;
+    height: 200px;
+    background: #fff;
+    position: absolute;
+    left: 100px;
+    top: 20px;
+}
+.top_hanger {
+    width:100px;
+    height: 5px;
+    background: #fff;
+    position: absolute;
+    left: 110px;
+    top: 30px;
+}
+.bottom_stand {
+    width:80px;
+    height: 5px;
+    background: #fff;
+    position: absolute;
+    left: 65px;
+    top: 220px;
+}
+.hman {
+    position: relative;
+    transform-origin: 46% 0;
+    animation: moveIt 4.5s ease-in-out infinite;
+}
+.hm_head {
+    width: 45px;
+    height: 45px;
+    border: 1px solid #fff;
+    border-radius: 50px;
+    position: absolute;
+    left: 135px;
+    top: 45px;
+}
+.hm_body {
+    width: 2px;
+    height: 80px;
+    position: absolute;
+    left: 157px;
+    top: 92px;
+    background-color: #fff;
+}
+.hm_l_arm {
+    width: 2px;
+    height: 40px;
+    position: absolute;
+    left: 146px;
+    top: 105px;
+    background-color: #fff;
+    transform: rotate(35deg);
+    -ms-transform: rotate(35deg);
+}
+.hm_r_arm {
+    width: 2px;
+    height: 40px;
+    position: absolute;
+    left: 168px;
+    top: 105px;
+    background-color: #fff;
+    transform: rotate(-35deg);
+    -ms-transform: rotate(-35deg);
+}
+.hm_l_leg {
+    width: 2px;
+    height: 40px;
+    position: absolute;
+    left: 146px;
+    top: 166px;
+    background-color: #fff;
+    transform: rotate(35deg);
+    -ms-transform: rotate(35deg);
+}
+.hm_r_leg {
+    width: 2px;
+    height: 40px;
+    position: absolute;
+    left: 168px;
+    top: 166px;
+    background-color: #fff;
+    transform: rotate(-35deg);
+    -ms-transform: rotate(-35deg);
+}
+#keypad {
+    border-left: 1px solid rgb(109, 101, 101);
+    flex: 0 50%;
+}
+
+@keyframes moveIt {
+    0%, 100% {
+        transform: rotate(8deg);
+    }
+    50% {
+        transform: rotate(-8deg);
+    }
+}

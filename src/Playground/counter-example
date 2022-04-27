@@ -1,0 +1,45 @@
+let count = 0;
+const countUp = () => {
+    count++;
+    renderCounterApp();
+};
+
+const countDown = () => {
+    count--;
+    renderCounterApp();
+};
+
+const reset = () => {
+    count = 0;
+    renderCounterApp();
+};
+
+var template_3 = (
+    <div>
+        <h4>Counter App:</h4>
+        <p>Counter: {count}</p>
+        <button onClick={countDown}>-1</button>
+        <button onClick={countUp}>+1</button>
+        <button onClick={reset}>Reset</button>
+    </div>
+);
+
+
+var counterApp = document.getElementById("counterApp");
+
+ReactDOM.render(template_3, counterApp);
+
+const renderCounterApp = () => {
+    var template_3 = (
+        <div>
+            <h4>Counter App:</h4>
+            <p>Counter: {count}</p>
+            <button onClick={countDown}>-1</button>
+            <button onClick={countUp}>+1</button>
+            <button onClick={reset}>Reset</button>
+        </div>
+    );
+    ReactDOM.render(template_3, counterApp);
+};
+
+renderCounterApp();

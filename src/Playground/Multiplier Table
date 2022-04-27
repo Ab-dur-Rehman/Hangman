@@ -1,0 +1,54 @@
+//Challenge area
+//! Multiplier:
+// const multiplier = {
+//     numbers: [1, 2, 3, 4, 5],
+//     multiplyBy: 2,
+//     multiply() {
+//         return this.numbers.map((numb) => <li>{this.multiplyBy +' * '+ numb +' = '+ (this.multiplyBy * numb)}</li>); 
+//     }
+// }
+
+const multiplier = {
+    numbers: [1, 2, 3, 4, 5],
+    multiplyBy: 4,
+    multiply() {
+        return this.numbers.map(
+            (numb) => <li>{`${this.multiplyBy} * ${numb} = ${this.multiplyBy * numb}`}</li>,
+        )
+    },
+}
+
+var template_2 = (
+    <div>
+        <h4>Table:</h4>
+        <ul>{multiplier.multiply()}</ul>
+    </div>
+);
+
+var appData = document.getElementById("app_data");
+
+ReactDOM.render(template_2, appData);
+
+
+//Extra: 2
+var app_data = {
+    user_name: "user1",
+    password: "******"
+}
+const getFirstName = (name) => name.split(" ")[0];
+function getTitle(title) {
+    if (title) {
+        return title;
+    } else {
+        return "It's default title";
+    }
+}
+
+//JSX - JavaScript XML
+var template = (
+    <div>      
+        <p>User Name: {app_data.user_name}</p>
+        <p>First Name: {getFirstName(app_info.Author)}</p>
+        <p>Password: {app_data.password}</p>
+    </div>
+);

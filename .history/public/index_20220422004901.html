@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="/scripts/app.css">
+    <meta charset="UTF-8">
+    <title>Hangman</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@400;600&display=swap');
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+</head>
+
+<body>
+    <div id="header"></div>
+    <div id="section_1"></div>
+    <div id="section_2">
+        <!-- <div id="hangman">
+            <div class="hm_wrapper">
+                <div class="hm_stand">
+                    <div class="hm_hook"></div>
+                    <div class="left_bar"></div>
+                    <div class="top_hanger"></div>
+                    <div class="bottom_stand"></div>
+                </div>
+                <div class="hman">
+                    <div class="hm_head"></div>
+                    <div class="hm_body"></div>
+                    <div class="hm_l_arm"></div>
+                    <div class="hm_r_arm"></div>
+                    <div class="hm_l_leg"></div>
+                    <div class="hm_r_leg"></div>
+                </div>
+            </div>
+        </div>
+        <div id="keypad">  
+
+        </div> -->
+    </div>
+    <div id="footer"></div>
+    <script src="https://unpkg.com/react@15.7.0/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15.7.0/dist/react-dom.js"></script>
+    <script src="/scripts/app.js"></script>
+    <script>
+        $(document).ready(function(){
+            let h_height = $("#header").outerHeight();
+            let s1_height = $("#section_1").outerHeight();
+            $(window).resize(function(){
+                var win_height = $(document).height();
+                let h_height = $("#header").outerHeight();
+                let s1_height = $("#section_1").outerHeight();
+                let s2_height = win_height - (h_height + s1_height);
+                $('.section_2_wrapper').height(s2_height);
+                console.log(win_height);
+                console.log(h_height);
+                console.log(s1_height);
+                console.log(s2_height);
+            });
+            $(window).resize();
+            let word;
+            let url = words = 'https://random-word-api.herokuapp.com/all';
+            console.log(words);
+            $.getJSON(url, 
+                function(data) {
+                    word = data;
+                    // or use your data here by calling yourFunction(data);
+                    console.log(word);
+                }
+            );
+        });
+    </script>
+</body>
+
+</html>
